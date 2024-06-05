@@ -1,4 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+//Variables
+$navBarBg: #1a1a1a;
+$textColor: #f1f1f1;
+$textColorHover: #1a1a1a;
+$navBarBxShadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+$btnBg: #f1f1f1;
+$btnPadding: 6px 15px;
+$btnBorder: 1px solid #f1f1f1;
+$btnRadius: 10px;
+$iconWidth: 40px;
+$iconHeight: 40px;
+
+//mixins
+@mixin btStyling () {
+    background-color: $btnBg;
+    padding: $btnPadding;
+    border-radius: $btnRadius;
+    border: $btnBorder;
+    color: $textColorHover;
+    font-weight: bold;
+}
+
+@mixin btnStylingHover() {
+    border: $btnBorder;
+    transition: 1s ease background-color;
+    color: $textColor;
+    background-color: inherit;
+
+}
+
+.navBar {
+    background-color: $navBarBg;
+    color: $textColor;
+    box-shadow: $navBarBxShadow;
+
+    .headerBtn {
+        @include btStyling();
+        margin-right: 10px;
+
+        &:hover {
+            @include btnStylingHover();
+        }
+    }
+
+    .navBarLogo {
+        width: 25px;
+    }
+
+    .socialMediaIcons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .icon {
+            width: $iconWidth;
+            height: $iconHeight;
+        }
+    }
+}
+
+@media (max-width: 530px) {
+    .navBar {
+        flex-direction: column;
+        gap: 10px;
+
+        .appName {
+            display: none;
+        }
+
+        .navBarLogo {
+            width: 40px;
+        }
+
+        .headerBtn {
+            margin: 0px;
+        }
+
+        .socialMediaIcons {
+            margin-bottom: 10px;
+        }
+    }
+}
