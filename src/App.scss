@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 //Variables
-$navBarBg: #1a1a1a;
 $textColor: #f1f1f1;
 $textColorHover: #1a1a1a;
 $navBarBxShadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -18,24 +17,25 @@ $iconHeight: 40px;
 
 //mixins
 @mixin btStyling () {
-    background-color: $btnBg;
-    padding: $btnPadding;
-    border-radius: $btnRadius;
-    border: $btnBorder;
-    color: $textColorHover;
-    font-weight: bold;
+    background-color: $btnBg !important;
+    padding: $btnPadding !important;
+    border-radius: $btnRadius !important;
+    border: $btnBorder !important;
+    color: $textColorHover !important;
+    font-weight: bold !important;
 }
 
 @mixin btnStylingHover() {
-    border: $btnBorder;
-    transition: 1s ease background-color;
-    color: $textColor;
-    background-color: inherit;
+    border: $btnBorder !important;
+    transition: 1s ease background-color !important;
+    color: $textColor !important;
+    background-color: inherit !important;
 
 }
 
 .navBar {
-    background-color: $navBarBg;
+    background: rgb(1, 2, 7);
+    background: linear-gradient(123deg, rgba(1, 2, 7, 1) 0%, rgba(5, 74, 159, 1) 100%, rgba(0, 115, 189, 1) 100%);
     color: $textColor;
     box-shadow: $navBarBxShadow;
 
@@ -64,6 +64,19 @@ $iconHeight: 40px;
         }
     }
 }
+
+.gotoBtn {
+    @include btStyling();
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &:hover {
+        @include btnStylingHover();
+    }
+}
+
 
 @media (max-width: 530px) {
     .navBar {

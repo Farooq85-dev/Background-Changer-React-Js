@@ -2,14 +2,14 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import Main_Logo from '../assets/main-logo.png';
+import CustomButton from './Button'
 
 export default function ButtonAppBar() {
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ margin: "10px" }}>
+        <Box sx={{ flexGrow: 1 }} style={{ margin: "10px ", }}>
             <AppBar position="static" style={{ borderRadius: "10px", boxShadow: "none" }} >
                 <Toolbar className='navBar' style={{ borderRadius: "10px" }}>
                     <IconButton
@@ -24,7 +24,7 @@ export default function ButtonAppBar() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className='appName'>
                         Bg-Changer
                     </Typography>
-                    <Button className='headerBtn' variant="text">Find Me</Button>
+                    <CustomButton icon="find" text="Find Me" classNameNavBar="headerBtn" />
                     <div className='socialMediaIcons'>
                         <a href="https://github.com/Farooq85-dev"><FaGithubSquare className='icon' /></a>
                         <a href="https://www.linkedin.com/in/muhammad-farooq-b71886295/"><FaLinkedin className='icon' /></a>
