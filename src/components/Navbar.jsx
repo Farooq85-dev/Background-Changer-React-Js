@@ -4,8 +4,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FaSquareFacebook } from "react-icons/fa6";
+import BgImageCard from '../components/Card';
 import Main_Logo from '../assets/main-logo.png';
-import CustomButton from './Button'
+import CustomButton from './Button';
 
 export default function ButtonAppBar() {
     return (
@@ -28,10 +30,11 @@ export default function ButtonAppBar() {
                     <div className='socialMediaIcons'>
                         <a href="https://github.com/Farooq85-dev"><FaGithubSquare className='icon' /></a>
                         <a href="https://www.linkedin.com/in/muhammad-farooq-b71886295/"><FaLinkedin className='icon' /></a>
-                        <a href="https://web.facebook.com/muhammadfarooqdev"><FaGithubSquare className='icon' /></a>
+                        <a href="https://web.facebook.com/muhammadfarooqdev"><FaSquareFacebook className='icon' /></a>
                     </div>
                 </Toolbar>
             </AppBar>
+            <BgImageCard />
         </Box>
     );
 }

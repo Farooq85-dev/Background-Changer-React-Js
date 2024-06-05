@@ -1,11 +1,10 @@
-import './App.scss';
+import RouterCmp from './components/router/Routes';
 
 function App() {
   return (
-    <>
-       
-    </>
+    <div>
+      <RouterCmp />
+    </div>
   )
 }
-
-export default App
+export default App;
