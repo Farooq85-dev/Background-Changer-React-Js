@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import { FaUsersViewfinder } from "react-icons/fa6";
-import '../App.scss'
+import '../App.scss';
 import { CiSquareChevRight } from "react-icons/ci";
 import { useNavigate } from 'react-router-dom';
 
